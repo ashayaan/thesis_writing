@@ -1,0 +1,27 @@
+% chap1.tex
+
+\chapter{Introduction}\label{chap:intro}
+One of the key issues an individual faces is how to allocate his wealth among various assets with ultimate goal to optimize some relevant measure of performance of the asset allocation such as profit, return etc. This problem of adjusting investments in a group of financial products is known as the portfolio management problem
+
+Portfolio Management is the the art and science of making decisions to continuously reallocate funds into different financial investment products with the aim to maximize the returns while restraining the risk ~\cite{markowitz1952portfolio}. 
+
+The PM process can be divided into two stages. The first stage starts with observation and experience and ends with belief about about the performance of the various securities. The second stage starts with the relevant belief of the about the future performance of the securities and ends with the choice of portfolio weights. Our work is concerned with the second stage of PM. 
+
+It will be very useful if a automated system can assist an investor by correctly indicating the trading action by utilizing the information available to the investor. In recent the application of artificial intelligence techniques for trading and portfolio management has seen significant growth ~\cite{gao2000algorithm}.  Deep reinforcement learning has gained a lot of attention due to its remarkable achievements in playing video games and board games. It is also gaining popularity in the area of algorithmic trading. In our work we explore the applications of deep RL in portfolio management in the India equity market.
+
+
+\section{Objective}
+
+The popularity if algorithmic trading systems has been steadily growing and many major financial institutions have started to replace their traditional human traders with their electronic counterparts~\cite{cumming2015investigation}. Developing these trading systems involves a significant amount of trial and error. The scope of this project is to build a trading system that uses RL to effectively manage financial portfolios.  Being a fully machine learning solution our system is not restricted to any particular market. To examine the validity and profitability of the system we test it in the Indian equity market. We will examine the existing use of RL in PM and then use this established information to build our own novel approach to the problem of PM.  
+
+\section{Possible Challenges}
+
+There are numerous existing systems and techniques that have been developed, proven to provide good return rates. However when developing a new idea from scratch, method of trial and error as well as market intuition and experience is often required. Several of the RL techniques that we will be using have only been recently established and thus the optimal choices of the parameters is still an open problem. We aim to to experiment with different parameter choices, investigate how they might the trading system and report the best returns.
+
+\section{Contributions}
+
+There are many existing deep learning systems which trade in the financial market. Most of these systems only try and predict the movements or trends in the financial market like Niaki and Hoseinzade ~\cite{niaki2013forecasting}, Fretias et al~\cite{freitas2009prediction} etc. These systems predict the price of assets for the next period by extracting the necessary information form the history of prices~\cite{jiang2017deep}. These price predictions are not market actions, converting them into market actions will require an additional layer of logic. RL can convert these market prediction into market actions.
+
+In this work we propose a RL trading system designed for the task of portfolio management. The core of the trading system is the combination of neural network predictors, which predict the prices of the assets of the portfolio, with a neural network whose job is to inspect the history of the assets and evaluate its potential for growth. 
+
+The former predicts the price value of asset sometime in the future from historical data. We use minimization of the mean square error as the criterion for prediction. The second neural network is used to generate a trading signal based on these predicted value, historical price data and an investment strategy. The  evaluation score of each asset is discounted by the size of the intentional weight change for the asset in the portfolio and is presented to the softmax layer, whose outcome will be the new portfolio weights for the coming trading period. The portfolio weights define the market action of the RL agent.
