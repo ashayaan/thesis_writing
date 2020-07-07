@@ -1,2 +1,2 @@
 # thesis_writing
-Contains the Tex file for my thesisi
+Contains the Tex file for my thesis
